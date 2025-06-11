@@ -1,0 +1,113 @@
+/* signup.css - Kartavya Signup Page Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #e3f0ff 0%, #f7fafd 100%);
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-card {
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(44,108,223,0.13);
+    padding: 2.5rem 2.2rem 2rem 2.2rem;
+    max-width: 370px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup-logo {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: #2d6cdf;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.signup-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+.signup-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.2rem;
+}
+.signup-form select,
+.signup-form input[type="text"],
+.signup-form input[type="email"],
+.signup-form input[type="password"] {
+    padding: 0.7rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    font-size: 1rem;
+    background: #f7fafd;
+    outline: none;
+    transition: border 0.2s;
+}
+.signup-form select:focus,
+.signup-form input[type="text"]:focus,
+.signup-form input[type="email"]:focus,
+.signup-form input[type="password"]:focus {
+    border-color: #2d6cdf;
+}
+.signup-btn {
+    margin-top: 0.7rem;
+    padding: 0.8rem 0;
+    background: #2d6cdf;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.signup-btn:hover {
+    background: #1b4e99;
+}
+.signup-footer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    color: #888;
+}
+.signup-footer a {
+    color: #2d6cdf;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.signup-footer a:hover {
+    color: #1b4e99;
+    text-decoration: underline;
+}
+.confirmation-message {
+    margin-top: 2rem;
+    color: #1b8a3a;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    animation: popin 0.7s cubic-bezier(.68,-0.55,.27,1.55);
+}
+@keyframes popin {
+    0% { transform: scale(0.85); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+@media (max-width: 500px) {
+    .signup-card {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        max-width: 98vw;
+    }
+}

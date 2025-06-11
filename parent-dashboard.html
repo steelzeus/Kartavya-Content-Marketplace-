@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Parent Dashboard – Kartavya</title>
+    <link rel="stylesheet" href="parent-dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kartavya</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Start Selling</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="parent-top">
+            <div class="parent-header">
+                <h1>Parent Dashboard</h1>
+                <p>Hi, you’re viewing <span class="student-name">Aarya’s</span> account</p>
+            </div>
+            <div class="child-switcher">
+                <label for="childSelect">Switch Child:</label>
+                <select id="childSelect" disabled>
+                    <option>Aarya Sharma</option>
+                    <option disabled>+ Add another child</option>
+                </select>
+            </div>
+        </section>
+        <section class="summary-cards">
+            <div class="summary-card">
+                <div class="summary-title">Products listed</div>
+                <div class="summary-value">4</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Total earnings</div>
+                <div class="summary-value">₹712</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Approved listings</div>
+                <div class="summary-value">3</div>
+            </div>
+            <div class="summary-card">
+                <div class="summary-title">Pending approval</div>
+                <div class="summary-value">1</div>
+            </div>
+        </section>
+        <section class="parent-products">
+            <h2>Aarya’s Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="product.html">Minimalist Wallpaper Pack</a></h3>
+                        <p class="product-price">₹149</p>
+                        <span class="badge approved">Approved</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="product.html">Study Planner Template</a></h3>
+                        <p class="product-price">₹79</p>
+                        <span class="badge approved">Approved</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="product.html">Abstract Art Prints</a></h3>
+                        <p class="product-price">₹199</p>
+                        <span class="badge approved">Approved</span>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-info">
+                        <h3 class="product-title"><a href="product.html">Motivational Poster Pack</a></h3>
+                        <p class="product-price">₹99</p>
+                        <span class="badge pending">Pending</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="recent-activity">
+            <h2>Recent Activity</h2>
+            <ul class="activity-list">
+                <li>Uploaded ‘Study Notes Template’ on June 10</li>
+                <li>‘Motivational Poster Pack’ submitted for approval on June 9</li>
+                <li>‘Abstract Art Prints’ approved on June 7</li>
+            </ul>
+        </section>
+        <section class="events">
+            <h2>Upcoming Events</h2>
+            <div class="event-list">
+                <div class="event-item">
+                    <span class="event-date">July 15</span>
+                    <span class="event-title"><a href="event.html">Kartavya Mela – July 15</a></span>
+                </div>
+                <div class="event-item">
+                    <span class="event-date">May 12</span>
+                    <span class="event-title"><a href="event.html">Mini Startup Fair – May 12</a></span>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Kartavya. All rights reserved.</p>
+    </footer>
+</body>
+</html>

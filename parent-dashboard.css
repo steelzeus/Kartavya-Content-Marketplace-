@@ -1,0 +1,218 @@
+/* parent-dashboard.css - Kartavya Parent Dashboard Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background: #f6faff;
+    color: #222;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.logo {
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #2d6cdf;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #222;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+.nav-links a.active, .nav-links a:hover {
+    color: #2d6cdf;
+}
+
+main {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem 2rem 1.5rem;
+}
+.parent-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 2.2rem;
+}
+.parent-header h1 {
+    font-size: 2rem;
+    color: #2d6cdf;
+    margin: 0 0 0.5rem 0;
+    font-weight: 600;
+}
+.parent-header p {
+    font-size: 1.1rem;
+    color: #444;
+    margin: 0;
+}
+.child-switcher {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    background: #eaf2fb;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+.child-switcher select {
+    border: none;
+    background: #f6faff;
+    font-size: 1rem;
+    border-radius: 5px;
+    padding: 0.3rem 0.7rem;
+    color: #2d6cdf;
+    font-weight: 500;
+}
+.child-switcher select:disabled {
+    opacity: 0.7;
+}
+
+.summary-cards {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+}
+.summary-card {
+    background: #eaf2fb;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(44,108,223,0.06);
+    padding: 1.2rem 2.2rem 1.1rem 2.2rem;
+    min-width: 170px;
+    flex: 1 1 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.summary-title {
+    font-size: 1rem;
+    color: #2d6cdf;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+.summary-value {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #222;
+}
+
+.parent-products {
+    margin-bottom: 2.5rem;
+}
+.parent-products h2 {
+    font-size: 1.2rem;
+    color: #2d6cdf;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(44,108,223,0.07);
+    padding: 1.2rem 1rem 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    transition: box-shadow 0.15s, transform 0.15s;
+}
+.product-card:hover {
+    box-shadow: 0 8px 24px rgba(44,108,223,0.13);
+    transform: translateY(-4px) scale(1.02);
+}
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #2d6cdf;
+    margin: 0 0 0.2rem 0;
+}
+.product-price {
+    font-size: 1rem;
+    color: #1b8a3a;
+    font-weight: 500;
+    margin: 0 0 0.2rem 0;
+}
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    margin-top: 0.3rem;
+}
+.badge.approved {
+    background: #e0f7e9;
+    color: #1b8a3a;
+}
+.badge.pending {
+    background: #fff3d6;
+    color: #d48a00;
+}
+
+.recent-activity {
+    margin-bottom: 2.5rem;
+}
+.recent-activity h2 {
+    font-size: 1.1rem;
+    color: #2d6cdf;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.activity-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: #444;
+    font-size: 1rem;
+}
+.activity-list li {
+    background: #f6faff;
+    border-left: 4px solid #2d6cdf;
+    margin-bottom: 0.7rem;
+    padding: 0.7rem 1rem;
+    border-radius: 7px;
+    box-shadow: 0 1px 4px rgba(44,108,223,0.04);
+}
+footer {
+    text-align: center;
+    padding: 1.5rem 0 1rem 0;
+    color: #888;
+    font-size: 1rem;
+    background: none;
+}
+@media (max-width: 700px) {
+    main {
+        padding: 1.2rem 0.5rem 1rem 0.5rem;
+    }
+    .parent-top {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .summary-cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .product-grid {
+        gap: 1rem;
+    }
+}

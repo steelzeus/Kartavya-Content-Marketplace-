@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Dashboard – Kartavya</title>
+    <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kartavya</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="dashboard.html">Start Selling</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome-section">
+            <h1>Welcome, Student Name</h1>
+        </section>
+        <section class="upload-section">
+            <h2>Upload a New Product</h2>
+            <form class="upload-form">
+                <label>Product Title
+                    <input type="text" name="title" required />
+                </label>
+                <label>Price (₹)
+                    <input type="number" name="price" min="0" required />
+                </label>
+                <label>Category
+                    <select name="category" required>
+                        <option value="Art">Art</option>
+                        <option value="eBook">eBook</option>
+                        <option value="Templates">Templates</option>
+                        <option value="Design">Design</option>
+                    </select>
+                </label>
+                <label>Description
+                    <textarea name="description" rows="3" required></textarea>
+                </label>
+                <label>Image Upload (optional)
+                    <input type="file" name="image" accept="image/*" />
+                </label>
+                <button type="submit" class="submit-btn">Submit</button>
+            </form>
+        </section>
+        <section class="your-products">
+            <h2>Your Products</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Wallpaper Pack" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Minimalist Wallpaper Pack</h2>
+                        <p class="product-price">₹149</p>
+                        <p class="product-desc">10 high-res wallpapers for phone & desktop, inspired by nature and geometry.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Abstract Art Prints" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Abstract Art Prints</h2>
+                        <p class="product-price">₹199</p>
+                        <p class="product-desc">Set of 3 printable abstract art pieces for your wall or workspace.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Social Media Kit" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Social Media Kit</h2>
+                        <p class="product-price">₹129</p>
+                        <p class="product-desc">Editable templates for Instagram, Facebook, and Twitter posts.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x250?text=Study+Template" alt="Study Planner Template" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Study Planner Template</h2>
+                        <p class="product-price">₹79</p>
+                        <p class="product-desc">A Notion/printable template to organize your study schedule and goals.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x250?text=Poster+Pack" alt="Motivational Poster Pack" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Motivational Poster Pack</h2>
+                        <p class="product-price">₹99</p>
+                        <p class="product-desc">5 printable posters with motivational quotes and minimalist design.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x250?text=Ebook" alt="Creative Process eBook" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Creative Process eBook</h2>
+                        <p class="product-price">₹119</p>
+                        <p class="product-desc">A short eBook on building creative habits and finding inspiration.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Watercolor Dreams" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Watercolor Dreams</h2>
+                        <p class="product-price">₹299</p>
+                        <p class="product-desc">A collection of vibrant watercolor art prints for your creative projects.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="https://via.placeholder.com/400x250?text=Resume+Template" alt="Minimalist Resume Template" class="product-cover" />
+                    <div class="product-info">
+                        <h2 class="product-title">Minimalist Resume Template</h2>
+                        <p class="product-price">₹99</p>
+                        <p class="product-desc">A clean, ATS-friendly resume template for job seekers.</p>
+                        <a href="product.html" class="view-btn">View Product</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Kartavya. All rights reserved.</p>
+    </footer>
+    <script>
+    // Personalize dashboard welcome and navbar
+    const name = localStorage.getItem('kartavya_name') || 'Student';
+    const role = localStorage.getItem('kartavya_role') || 'Student';
+    // Welcome message
+    const welcomeSection = document.querySelector('.welcome-section h1');
+    if (welcomeSection) {
+        welcomeSection.textContent = `Welcome back, ${name} 👋`;
+    }
+    // Navbar personalization
+    const nav = document.querySelector('.navbar .nav-links');
+    if (nav && !document.getElementById('nav-user')) {
+        const li = document.createElement('li');
+        li.id = 'nav-user';
+        li.innerHTML = `<span style="color:#2d6cdf;font-weight:600;">${name}</span>`;
+        nav.appendChild(li);
+    }
+    // Role-based redirect
+    if (role === 'Parent') {
+        window.location.href = 'parent-dashboard.html';
+    } else if (role === 'School Admin') {
+        window.location.href = 'school-dashboard.html';
+    }
+    </script>
+</body>
+</html>

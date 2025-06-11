@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Sign Up – Kartavya</title>
+    <link rel="stylesheet" href="signup.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="signup-card">
+            <h1 class="signup-logo">Create your Kartavya Account</h1>
+            <form class="signup-form" id="signupForm">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" required />
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required />
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm" required />
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                    <option value="Student">Student</option>
+                    <option value="Parent">Parent</option>
+                    <option value="School Admin">School Admin</option>
+                </select>
+                <button type="submit" class="signup-btn">Create Account</button>
+            </form>
+            <div class="signup-footer">
+                <span>Already have an account? <a href="login.html">Log in</a></span>
+            </div>
+            <div class="confirmation-message" id="confirmationMsg" style="display:none;">
+                Account created! Redirecting to your dashboard...
+            </div>
+        </div>
+    </main>
+    <script>
+    const form = document.getElementById('signupForm');
+    const confirmation = document.getElementById('confirmationMsg');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        confirmation.style.display = 'block';
+        setTimeout(() => {
+            window.location.href = 'dashboard.html';
+        }, 2000);
+    });
+    </script>
+</body>
+</html>

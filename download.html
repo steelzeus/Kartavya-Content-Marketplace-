@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Download – Kartavya</title>
+    <link rel="stylesheet" href="download.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Kartavya</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="explore.html">Explore</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Start Selling</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="download-container">
+            <div class="confirmation-box">
+                <h1>Thank you for your purchase, Prakhar Tiwary!</h1>
+                <p class="subtitle">Your digital download is ready.</p>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="download-btn" download>Download Your File</a>
+                <p class="help-msg">Need help? Contact Kartavya Support.</p>
+                <a href="explore.html" class="return-btn">Return to Explore</a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>© 2025 Kartavya. All rights reserved.</p>
+    </footer>
+    <script>
+    // Personalize download confirmation
+    const name = localStorage.getItem('kartavya_name') || 'Prakhar Tiwary';
+    const h1 = document.querySelector('.confirmation-box h1');
+    if (h1) {
+        h1.textContent = `Thank you for your purchase, ${name}!`;
+    }
+    // Navbar personalization
+    const nav = document.querySelector('.navbar .nav-links');
+    if (nav && !document.getElementById('nav-user')) {
+        const li = document.createElement('li');
+        li.id = 'nav-user';
+        li.innerHTML = `<span style="color:#2d6cdf;font-weight:600;">${name}</span>`;
+        nav.appendChild(li);
+    }
+    </script>
+</body>
+</html>
