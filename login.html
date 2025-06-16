@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header></header>
     <main>
         <div class="login-card">
             <h1 class="login-logo" id="welcomeMsg">Welcome to Kartavya</h1>
@@ -24,7 +25,7 @@
                 <input type="email" id="email" name="email" required />
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" required />
-                <button type="submit" class="login-btn">Log In</button>
+                <button type="submit" class="btn btn-primary login-btn">Log In</button>
             </form>
             <div class="login-footer">
                 <a href="dashboard.html" class="signup-link">New here? Create an account</a>
@@ -54,5 +55,8 @@
         window.location.href = 'dashboard.html';
     });
     </script>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>

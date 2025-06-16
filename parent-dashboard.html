@@ -10,28 +10,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
         <section class="parent-top">
             <div class="parent-header">
-                <h1>Viewing Arya Sharma’s Dashboard (Parent View)</h1>
-                <p>Hi, you’re viewing <span class="student-name">Arya Sharma’s</span> account</p>
+                <h1>Viewing <span class="dynamic-name"></span>'s Dashboard (Parent View)</h1>
+                <p>Hi, you’re viewing <span class="dynamic-name"></span>'s account</p>
             </div>
             <div class="child-switcher">
                 <label for="childSelect">Switch Child:</label>
                 <select id="childSelect" disabled>
-                    <option>Aarya Sharma</option>
+                    <option><span class="dynamic-name"></span></option>
                     <option disabled>+ Add another child</option>
                 </select>
             </div>
@@ -55,7 +44,7 @@
             </div>
         </section>
         <section class="parent-products">
-            <h2>Arya’s Products</h2>
+            <h2><span class="dynamic-name"></span>'s Products</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <div class="product-info">
@@ -112,5 +101,8 @@
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>

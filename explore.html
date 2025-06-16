@@ -10,92 +10,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
-        <section class="hero" style="background: linear-gradient(90deg, #2D2A8A 0%, #e93b81 100%); color: #fff;">
-            <h1>Explore Arya Sharma’s Digital Products</h1>
-        </section>
-        <section class="explore-controls">
-            <input type="text" class="search-input" placeholder="Search by title or tag..." />
-            <div class="category-filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="art">Art</button>
-                <button class="filter-btn" data-category="ebook">eBook</button>
-                <button class="filter-btn" data-category="templates">Templates</button>
-                <button class="filter-btn" data-category="design">Design</button>
+        <section class="hero-gradient">
+            <div class="hero-container">
+                <h1 class="hero-headline">Discover Student-Created Digital Products</h1>
+                <div class="hero-subheadline">Every download supports a young creator.</div>
+                <div class="explore-controls">
+                    <input type="text" class="search-input" placeholder="Search by title or tag..." />
+                    <div class="category-filters">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="art">Art</button>
+                        <button class="filter-btn" data-category="ebook">eBook</button>
+                        <button class="filter-btn" data-category="templates">Templates</button>
+                        <button class="filter-btn" data-category="design">Design</button>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="product-grid" id="productGrid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Pastel Art Kit</h2>
-                    <p class="product-price">₹249</p>
-                    <p class="product-desc">A curated set of pastel digital brushes and textures for Procreate and Photoshop.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Study Wallpaper Pack" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Study Wallpaper Pack</h2>
-                    <p class="product-price">₹99</p>
-                    <p class="product-desc">10 motivational wallpapers for students, designed to boost focus and creativity.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Notes Template" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Notes Template</h2>
-                    <p class="product-price">₹59</p>
-                    <p class="product-desc">A Notion and printable template for organized, effective study notes.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Poster Set" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Minimalist Poster Set</h2>
-                    <p class="product-price">₹149</p>
-                    <p class="product-desc">A set of 5 printable posters for dorm rooms and study spaces.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Digital Sketchbook" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Digital Sketchbook</h2>
-                    <p class="product-price">₹199</p>
-                    <p class="product-desc">A digital sketchbook with 50+ pages for artists and doodlers.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Social Media Kit" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Social Media Kit</h2>
-                    <p class="product-price">₹129</p>
-                    <p class="product-desc">Editable templates for Instagram, Facebook, and Twitter posts.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
+            <!-- Product cards will be rendered by explore.js -->
         </section>
     </main>
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
-    <script src="explore.js" defer></script>
+    <script src="explore.js"></script>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
+    <script>
+    // Personalize explore page with dynamic name
+    const name = localStorage.getItem('kartavya_name') || 'Student';
+    document.querySelectorAll('.dynamic-name').forEach(el => el.textContent = name);
+    </script>
 </body>
 </html>

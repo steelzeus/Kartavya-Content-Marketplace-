@@ -10,24 +10,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html" class="active">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
+        <section class="profile-summary">
+            <img src="https://via.placeholder.com/80x80.png?text=User" alt="Profile" class="profile-pic" />
+            <div class="profile-info">
+                <div class="profile-name"><span class="dynamic-name"></span></div>
+                <div class="profile-bio">Student Creator | Age 16 | Templates & Design</div>
+                <a href="edit-profile.html" class="btn btn-secondary edit-profile-btn">Edit Profile</a>
+            </div>
+        </section>
+        <section class="performance-section">
+            <div class="performance-header">Your Performance</div>
+            <div class="analytics-cards">
+                <div class="analytics-card">
+                    <div class="analytics-icon">💰</div>
+                    <div class="analytics-title">Total Sales</div>
+                    <div class="analytics-value">₹1,280</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">📦</div>
+                    <div class="analytics-title">Products Listed</div>
+                    <div class="analytics-value">4</div>
+                </div>
+                <div class="analytics-card">
+                    <div class="analytics-icon">👁️</div>
+                    <div class="analytics-title">Product Views</div>
+                    <div class="analytics-value">1,248</div>
+                </div>
+            </div>
+        </section>
         <section class="welcome-section">
-            <h1>Viewing Arya Sharma’s Dashboard</h1>
+            <h1>Viewing <span class="dynamic-name"></span>'s Dashboard</h1>
         </section>
         <section class="upload-section">
-            <h2>Add a New Product as Arya</h2>
+            <h2>Add a New Product as <span class="dynamic-name"></span></h2>
             <form class="upload-form">
                 <label>Product Title
                     <input type="text" name="title" required />
@@ -49,95 +66,27 @@
                 <label>Image Upload (optional)
                     <input type="file" name="image" accept="image/*" />
                 </label>
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
             </form>
         </section>
         <section class="your-products">
-            <h2>Arya’s Products</h2>
+            <h2><span class="dynamic-name"></span>'s Products</h2>
             <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Pastel Art Kit</h2>
-                        <p class="product-price">₹249</p>
-                        <p class="product-desc">A curated set of pastel digital brushes and textures for Procreate and Photoshop.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Study Wallpaper Pack" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Study Wallpaper Pack</h2>
-                        <p class="product-price">₹99</p>
-                        <p class="product-desc">10 motivational wallpapers for students, designed to boost focus and creativity.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Notes Template" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Notes Template</h2>
-                        <p class="product-price">₹59</p>
-                        <p class="product-desc">A Notion and printable template for organized, effective study notes.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Poster Set" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Minimalist Poster Set</h2>
-                        <p class="product-price">₹149</p>
-                        <p class="product-desc">A set of 5 printable posters for dorm rooms and study spaces.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Digital Sketchbook" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Digital Sketchbook</h2>
-                        <p class="product-price">₹199</p>
-                        <p class="product-desc">A digital sketchbook with 50+ pages for artists and doodlers.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Social Media Kit" class="product-cover" />
-                    <div class="product-info">
-                        <h2 class="product-title">Social Media Kit</h2>
-                        <p class="product-price">₹129</p>
-                        <p class="product-desc">Editable templates for Instagram, Facebook, and Twitter posts.</p>
-                        <a href="product.html" class="view-btn">View Product</a>
-                    </div>
-                </div>
+                <!-- Product cards will be rendered by dashboard.js -->
             </div>
         </section>
     </main>
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
+    <script src="dashboard.js"></script>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
     <script>
-    // Personalize dashboard welcome and navbar
-    const name = localStorage.getItem('kartavya_name') || 'Student';
-    const role = localStorage.getItem('kartavya_role') || 'Student';
-    // Welcome message
-    const welcomeSection = document.querySelector('.welcome-section h1');
-    if (welcomeSection) {
-        welcomeSection.textContent = `Welcome back, ${name} 👋`;
-    }
-    // Navbar personalization
-    const nav = document.querySelector('.navbar .nav-links');
-    if (nav && !document.getElementById('nav-user')) {
-        const li = document.createElement('li');
-        li.id = 'nav-user';
-        li.innerHTML = `<span style="color:#2d6cdf;font-weight:600;">${name}</span>`;
-        nav.appendChild(li);
-    }
-    // Role-based redirect
-    if (role === 'Parent') {
-        window.location.href = 'parent-dashboard.html';
-    } else if (role === 'School Admin') {
-        window.location.href = 'school-dashboard.html';
-    }
+    // Personalize profile name
+    const dashName = localStorage.getItem('kartavya_name') || 'Student';
+    document.querySelectorAll('.dynamic-name').forEach(el => el.textContent = dashName);
     </script>
 </body>
 </html>

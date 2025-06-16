@@ -3,36 +3,25 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Aarya Sharma – Kartavya Storefront</title>
+    <title><span class="dynamic-name"></span> – Kartavya Storefront</title>
     <link rel="stylesheet" href="storefront.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
         <section class="creator-profile" style="background: linear-gradient(90deg, #2D2A8A 0%, #e93b81 100%); color: #fff;">
-            <img src="https://via.placeholder.com/120x120.png?text=A" alt="Arya Sharma" class="profile-pic" />
+            <img src="https://via.placeholder.com/120x120.png?text=A" alt="Profile picture" class="profile-pic" />
             <div class="profile-info">
-                <h1 class="creator-name">Arya Sharma</h1>
+                <h1 class="creator-name"><span class="dynamic-name"></span></h1>
                 <p class="creator-bio">16-year-old artist creating minimalist wallpapers & templates.</p>
-                <a href="#" class="creator-link" target="_blank">@arya.art</a>
+                <a href="#" class="creator-link" target="_blank">@<span class="dynamic-name"></span>.art</a>
             </div>
         </section>
         <section class="creator-products">
-            <h2>Arya’s Store</h2>
+            <h2><span class="dynamic-name"></span>'s Store</h2>
             <div class="product-grid">
                 <div class="product-card">
                     <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="product-cover" />
@@ -88,5 +77,8 @@
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>

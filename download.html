@@ -10,26 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="#">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
         <div class="download-container">
             <div class="confirmation-box">
-                <h1>Thank you for your purchase, Prakhar Tiwary!</h1>
+                <h1>Thank you for your purchase, <span class="dynamic-name"></span>!</h1>
                 <p class="subtitle">Your digital download is ready.</p>
-                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="download-btn" download>Download Your File</a>
+                <a href="https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf" class="btn btn-primary download-btn" download>Download Your File</a>
                 <p class="help-msg">Need help? Contact Kartavya Support.</p>
-                <a href="explore.html" class="return-btn">Return to Explore</a>
+                <a href="explore.html" class="btn btn-secondary return-btn">Return to Explore</a>
             </div>
         </div>
     </main>
@@ -39,18 +28,10 @@
     <script>
     // Personalize download confirmation
     const name = localStorage.getItem('kartavya_name') || 'Prakhar Tiwary';
-    const h1 = document.querySelector('.confirmation-box h1');
-    if (h1) {
-        h1.textContent = `Thank you for your purchase, ${name}!`;
-    }
-    // Navbar personalization
-    const nav = document.querySelector('.navbar .nav-links');
-    if (nav && !document.getElementById('nav-user')) {
-        const li = document.createElement('li');
-        li.id = 'nav-user';
-        li.innerHTML = `<span style="color:#2d6cdf;font-weight:600;">${name}</span>`;
-        nav.appendChild(li);
-    }
+    document.querySelectorAll('.dynamic-name').forEach(el => el.textContent = name);
     </script>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>

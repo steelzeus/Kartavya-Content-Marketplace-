@@ -1,6 +1,6 @@
-// explore.js - Kartavya Explore Page Product Data & Rendering
+// dashboard.js - Kartavya Dashboard Product Data & Rendering
 
-const exploreProducts = [
+const dashboardProducts = [
   {
     title: "Zen Focus Wallpaper Kit",
     price: "₹79",
@@ -87,10 +87,10 @@ const exploreProducts = [
   }
 ];
 
-function renderExploreProducts() {
-  const grid = document.getElementById('productGrid');
+function renderDashboardProducts() {
+  const grid = document.querySelector('.product-grid');
   if (!grid) return;
-  grid.innerHTML = exploreProducts.map(product => `
+  grid.innerHTML = dashboardProducts.map(product => `
     <div class="product-card">
       <span class="category-badge" data-category="${product.category}">${product.category}</span>
       <img src="${product.image}" alt="${product.title}" class="product-cover" />
@@ -104,4 +104,4 @@ function renderExploreProducts() {
   `).join('');
 }
 
-document.addEventListener('DOMContentLoaded', renderExploreProducts);
+document.addEventListener('DOMContentLoaded', renderDashboardProducts);

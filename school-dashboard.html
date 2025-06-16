@@ -10,22 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
+    <header></header>
     <main>
         <section class="school-admin-top">
-            <h1>Viewing Arya Sharma’s Dashboard (School Admin)</h1>
-            <p class="subtitle">Welcome, Principal Munish Dubey (Bridegford School) – Arya’s School</p>
+            <h1>Viewing <span class="dynamic-name"></span>'s Dashboard (School Admin)</h1>
+            <p class="subtitle">Welcome, Principal Munish Dubey (Bridegford School) – <span class="dynamic-name"></span>'s School</p>
         </section>
         <section class="school-summary-cards">
             <div class="summary-card">
@@ -55,66 +44,21 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Arya Sharma</td>
+                        <td><span class="dynamic-name"></span></td>
                         <td>10</td>
                         <td>₹2,100</td>
-                        <td><a href="product.html">Pastel Art Kit</a>, <a href="product.html">Study Wallpaper Pack</a>, <a href="product.html">Notes Template</a></td>
-                        <td><span class="status-badge active">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>Rohan Gupta</td>
-                        <td>12</td>
-                        <td>₹1,850</td>
-                        <td><a href="product.html">Motivational Poster Pack</a>, 5</td>
-                        <td><span class="status-badge active">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>Mehak Singh</td>
-                        <td>11</td>
-                        <td>₹1,600</td>
-                        <td><a href="product.html">Study Planner Template</a>, 4</td>
-                        <td><span class="status-badge pending">Pending</span></td>
-                    </tr>
-                    <tr>
-                        <td>Arjun Verma</td>
-                        <td>9</td>
-                        <td>₹1,200</td>
-                        <td><a href="product.html">Abstract Art Prints</a>, 3</td>
-                        <td><span class="status-badge active">Active</span></td>
-                    </tr>
-                    <tr>
-                        <td>Sana Ali</td>
-                        <td>10</td>
-                        <td>₹1,050</td>
-                        <td><a href="product.html">Sana Ali</a>, 2</td>
-                        <td><span class="status-badge inactive">Inactive</span></td>
-                    </tr>
-                    <tr>
-                        <td>Devansh Rao</td>
-                        <td>8</td>
-                        <td>₹900</td>
-                        <td><a href="product.html">Devansh Rao</a>, 2</td>
-                        <td><span class="status-badge active">Active</span></td>
+                        <td>5</td>
+                        <td>Active</td>
                     </tr>
                 </tbody>
             </table>
-        </section>
-        <section class="school-events">
-            <h2>School Events</h2>
-            <ul class="events-list">
-                <li>
-                    <span class="event-title"><a href="event.html">Kartavya Mela – July 15</a></span>
-                    <span class="event-status upcoming">Upcoming</span>
-                </li>
-                <li>
-                    <span class="event-title"><a href="event.html">Mini Startup Fair – May 12</a></span>
-                    <span class="event-status completed">Completed</span>
-                </li>
-            </ul>
         </section>
     </main>
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>

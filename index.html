@@ -9,40 +9,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
-
+    <header></header>
     <main>
         <section class="hero" style="background: linear-gradient(90deg, #2D2A8A 0%, #e93b81 100%); color: #fff;">
             <h1>The Marketplace for Students</h1>
             <p>Sell your creativity. Support young creators. Discover student-made digital products.</p>
             <div class="cta-buttons">
-                <a href="dashboard.html" class="btn-primary">Start Selling</a>
-                <a href="explore.html" class="btn-secondary">Explore Products</a>
+                <a href="dashboard.html" class="btn btn-primary">Start Selling</a>
+                <a href="explore.html" class="btn btn-secondary">Explore Products</a>
             </div>
         </section>
         <section class="explore-as" style="background: linear-gradient(90deg, #FFCF59 0%, #72E4C4 100%); padding: 2.5rem 0; text-align: center;">
             <h2 style="color: #2D2A8A; margin-bottom: 2rem;">Explore as:</h2>
             <div class="cta-buttons" style="justify-content: center; flex-wrap: wrap; gap: 1.5rem;">
-                <a href="dashboard.html" class="btn-primary" style="background: #2D2A8A;">Enter as Arya (Creator)</a>
-                <a href="storefront.html" class="btn-secondary" style="background: #e93b81;">Visit Arya’s Store</a>
-                <a href="parent-dashboard.html" class="btn-primary" style="background: #FFCF59; color: #1a1a1a;">Parent View</a>
-                <a href="school-dashboard.html" class="btn-primary" style="background: #72E4C4; color: #1a1a1a;">School View</a>
+                <a href="dashboard.html" class="btn btn-primary">Enter as <span class="dynamic-name"></span> (Creator)</a>
+                <a href="storefront.html" class="btn btn-secondary">Visit <span class="dynamic-name"></span>’s Store</a>
+                <a href="parent-dashboard.html" class="btn btn-primary">Parent View</a>
+                <a href="school-dashboard.html" class="btn btn-primary">School View</a>
             </div>
         </section>
     </main>
-
     <footer>
         <p>© 2025 Kartavya. All rights reserved.</p>
     </footer>
+    <script src="index-personalization.js"></script>
+    <script src="kartavya-navbar.js"></script>
+    <script src="feedback.js"></script>
+    <script src="chatbot-fake.js"></script>
 </body>
 </html>
