@@ -4,79 +4,89 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title><span class="dynamic-name"></span> – Kartavya Storefront</title>
-    <link rel="stylesheet" href="storefront.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: 'Poppins', sans-serif; }
+    </style>
 </head>
-<body>
-    <header></header>
-    <main>
-        <section class="creator-profile" style="background: linear-gradient(90deg, #2D2A8A 0%, #e93b81 100%); color: #fff;">
-            <img src="https://via.placeholder.com/120x120.png?text=A" alt="Profile picture" class="profile-pic" />
-            <div class="profile-info">
-                <h1 class="creator-name"><span class="dynamic-name"></span></h1>
-                <p class="creator-bio">16-year-old artist creating minimalist wallpapers & templates.</p>
-                <a href="#" class="creator-link" target="_blank">@<span class="dynamic-name"></span>.art</a>
+<body class="bg-gray-50 min-h-screen">
+    <header>
+      <!-- Navbar will be injected by kartavya-navbar.js -->
+    </header>
+    <main class="mx-auto px-4 py-8 max-w-5xl">
+        <!-- Creator Profile -->
+        <section class="flex md:flex-row flex-col items-center gap-8 bg-gradient-to-r from-indigo-800 to-pink-500 shadow mb-10 p-8 rounded-xl text-white">
+            <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                <img src="https://via.placeholder.com/120x120.png?text=A" alt="Profile picture" class="shadow-lg border-4 border-white rounded-full w-28 h-28 object-cover" />
+            </div>
+            <div>
+                <h1 class="mb-2 font-bold text-3xl creator-name"><span class="dynamic-name"></span></h1>
+                <p class="mb-2 text-lg creator-bio">16-year-old artist creating minimalist wallpapers & templates.</p>
+                <a href="#" class="text-pink-100 hover:text-white underline creator-link" target="_blank">@<span class="dynamic-name"></span>.art</a>
             </div>
         </section>
-        <section class="creator-products">
-            <h2><span class="dynamic-name"></span>'s Store</h2>
-            <div class="product-grid">
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="product-cover" />
+        <!-- Creator Products -->
+        <section>
+            <h2 class="mb-6 font-semibold text-gray-800 text-2xl"><span class="dynamic-name"></span>'s Store</h2>
+            <div class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+                <div class="flex flex-col bg-white shadow p-4 rounded-xl product-card">
+                    <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="shadow-sm rounded-lg w-full h-48 object-cover product-cover" />
+                    </div>
                     <div class="product-info">
-                        <h3 class="product-title">Pastel Art Kit</h3>
-                        <p class="product-price">₹249</p>
-                        <p class="product-desc">A curated set of pastel digital brushes and textures for Procreate and Photoshop.</p>
+                        <h3 class="font-semibold text-gray-900 product-title">Pastel Art Kit</h3>
+                        <p class="font-bold text-pink-600 product-price">₹249</p>
+                        <p class="text-gray-600 text-sm product-desc">A curated set of pastel digital brushes and textures for Procreate and Photoshop.</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Study Wallpaper Pack" class="product-cover" />
+                <div class="flex flex-col bg-white shadow p-4 rounded-xl product-card">
+                    <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Study Wallpaper Pack" class="shadow-sm rounded-lg w-full h-48 object-cover product-cover" />
+                    </div>
                     <div class="product-info">
-                        <h3 class="product-title">Study Wallpaper Pack</h3>
-                        <p class="product-price">₹99</p>
-                        <p class="product-desc">10 motivational wallpapers for students, designed to boost focus and creativity.</p>
+                        <h3 class="font-semibold text-gray-900 product-title">Study Wallpaper Pack</h3>
+                        <p class="font-bold text-pink-600 product-price">₹99</p>
+                        <p class="text-gray-600 text-sm product-desc">10 motivational wallpapers for students, designed to boost focus and creativity.</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Notes Template" class="product-cover" />
+                <div class="flex flex-col bg-white shadow p-4 rounded-xl product-card">
+                    <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Notes Template" class="shadow-sm rounded-lg w-full h-48 object-cover product-cover" />
+                    </div>
                     <div class="product-info">
-                        <h3 class="product-title">Notes Template</h3>
-                        <p class="product-price">₹59</p>
-                        <p class="product-desc">A Notion and printable template for organized, effective study notes.</p>
+                        <h3 class="font-semibold text-gray-900 product-title">Notes Template</h3>
+                        <p class="font-bold text-pink-600 product-price">₹59</p>
+                        <p class="text-gray-600 text-sm product-desc">A Notion and printable template for organized, effective study notes.</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Poster Set" class="product-cover" />
+                <div class="flex flex-col bg-white shadow p-4 rounded-xl product-card">
+                    <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Poster Set" class="shadow-sm rounded-lg w-full h-48 object-cover product-cover" />
+                    </div>
                     <div class="product-info">
-                        <h3 class="product-title">Minimalist Poster Set</h3>
-                        <p class="product-price">₹149</p>
-                        <p class="product-desc">A set of 5 printable posters for dorm rooms and study spaces.</p>
+                        <h3 class="font-semibold text-gray-900 product-title">Minimalist Poster Set</h3>
+                        <p class="font-bold text-pink-600 product-price">₹149</p>
+                        <p class="text-gray-600 text-sm product-desc">A set of 5 printable posters for dorm rooms and study spaces.</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Digital Sketchbook" class="product-cover" />
+                <div class="flex flex-col bg-white shadow p-4 rounded-xl product-card">
+                    <div class="bg-white mb-3 rounded-lg overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Digital Sketchbook" class="shadow-sm rounded-lg w-full h-48 object-cover product-cover" />
+                    </div>
                     <div class="product-info">
-                        <h3 class="product-title">Digital Sketchbook</h3>
-                        <p class="product-price">₹199</p>
-                        <p class="product-desc">A digital sketchbook with 50+ pages for artists and doodlers.</p>
+                        <h3 class="font-semibold text-gray-900 product-title">Digital Sketchbook</h3>
+                        <p class="font-bold text-pink-600 product-price">₹199</p>
+                        <p class="text-gray-600 text-sm product-desc">A digital sketchbook for artists, compatible with all major tablets.</p>
                     </div>
                 </div>
-                <div class="product-card">
-                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Social Media Kit" class="product-cover" />
-                    <div class="product-info">
-                        <h3 class="product-title">Social Media Kit</h3>
-                        <p class="product-price">₹129</p>
-                        <p class="product-desc">Editable templates for Instagram, Facebook, and Twitter posts.</p>
-                    </div>
-                </div>
+                <!-- Add more product cards as needed -->
             </div>
         </section>
     </main>
-    <footer>
-        <p>© 2025 Kartavya. All rights reserved.</p>
-    </footer>
     <script src="kartavya-navbar.js"></script>
     <script src="feedback.js"></script>
     <script src="chatbot-fake.js"></script>

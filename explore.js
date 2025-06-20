@@ -1,107 +1,46 @@
 // explore.js - Kartavya Explore Page Product Data & Rendering
 
-const exploreProducts = [
-  {
-    title: "Zen Focus Wallpaper Kit",
-    price: "₹79",
-    description: "Minimal, calming wallpapers for deep work and study.",
-    category: "Wallpaper",
-    image: "https://source.unsplash.com/random/600x400?minimal,zen,wallpaper"
-  },
-  {
-    title: "Study System Journal PDF",
-    price: "₹99",
-    description: "Printable journal to organize your study goals and habits.",
-    category: "Template",
-    image: "https://source.unsplash.com/random/600x400?journal,study,template"
-  },
-  {
-    title: "2025 Planner Notion Pack",
-    price: "₹149",
-    description: "A Notion template for planning your best year yet.",
-    category: "Template",
-    image: "https://source.unsplash.com/random/600x400?notion,planner,template"
-  },
-  {
-    title: "Kawaii Study Notes",
-    price: "₹99",
-    description: "Pastel notepad aesthetic for cute, organized study notes.",
-    category: "Template",
-    image: "https://source.unsplash.com/random/600x400?pastel,notebook"
-  },
-  {
-    title: "Dark Mode Wallpaper Pack",
-    price: "₹149",
-    description: "Tech-inspired dark theme wallpapers for all your devices.",
-    category: "Wallpaper",
-    image: "https://source.unsplash.com/random/600x400?dark,technology"
-  },
-  {
-    title: "Custom Resume Builder",
-    price: "₹119",
-    description: "Modern resume UI mockup for job seekers.",
-    category: "UI Kit",
-    image: "https://source.unsplash.com/random/600x400?resume,ui"
-  },
-  {
-    title: "Study Timer App UI Kit",
-    price: "₹139",
-    description: "Mobile app mockup for a productivity timer.",
-    category: "UI Kit",
-    image: "https://source.unsplash.com/random/600x400?app,mobile,ui"
-  },
-  {
-    title: "Self-Care Habit Tracker",
-    price: "₹109",
-    description: "Clean health dashboard for tracking habits and wellness.",
-    category: "Template",
-    image: "https://source.unsplash.com/random/600x400?health,tracker"
-  },
-  {
-    title: "College Essay eBook",
-    price: "₹149",
-    description: "A digital eBook for writing standout college essays.",
-    category: "eBook",
-    image: "https://source.unsplash.com/random/600x400?book,laptop"
-  },
-  {
-    title: "Creative Portfolio Starter",
-    price: "₹159",
-    description: "Sleek personal site preview for creative portfolios.",
-    category: "UI Kit",
-    image: "https://source.unsplash.com/random/600x400?portfolio,website"
-  },
-  {
-    title: "Motivation Quote Poster Set",
-    price: "₹49",
-    description: "Printable posters to inspire your study space every day.",
-    category: "Wallpaper",
-    image: "https://source.unsplash.com/random/600x400?poster,motivation"
-  },
-  {
-    title: "Digital Flashcard Maker",
-    price: "₹129",
-    description: "Create, organize, and review flashcards for any subject.",
-    category: "UI Kit",
-    image: "https://source.unsplash.com/random/600x400?flashcard,app"
+// Product dataset with 100+ unique products
+document.addEventListener("DOMContentLoaded", () => {
+  const productGrid = document.getElementById("productGrid");
+
+  const categories = ["Template", "eBook", "UI Kit", "Wallpaper", "Journal", "Planner"];
+  const keywords = [
+    "notebook", "workspace", "planner", "design", "study", "journal", "creative", "ui", "templates", "ebooks",
+    "productivity", "calendar", "dashboard", "resume", "portfolio", "abstract", "paper", "desk", "illustration",
+    "pastel", "minimal", "focus", "habit", "tracker", "workflow", "sketch", "draw", "document", "writing", "digital",
+    "learning", "aesthetic", "flatlay", "laptop", "planner", "books", "motivation", "whiteboard", "notes", "cozy"
+  ];
+
+  const products = [];
+
+  for (let i = 0; i < 100; i++) {
+    const keyword = keywords[i % keywords.length];
+    const category = categories[i % categories.length];
+    products.push({
+      id: i + 1,
+      title: `${keyword.charAt(0).toUpperCase() + keyword.slice(1)} ${category}`,
+      description: `A high-quality ${category.toLowerCase()} that helps you stay organized and inspired.`,
+      price: `₹${Math.floor(Math.random() * 350) + 49}`,
+      category: category,
+      image: `https://source.unsplash.com/600x400/?${keyword}`
+    });
   }
-];
 
-function renderExploreProducts() {
-  const grid = document.getElementById('productGrid');
-  if (!grid) return;
-  grid.innerHTML = exploreProducts.map(product => `
-    <div class="product-card">
-      <span class="category-badge" data-category="${product.category}">${product.category}</span>
-      <img src="${product.image}" alt="${product.title}" class="product-cover" />
-      <div class="product-info">
-        <h2 class="product-title">${product.title}</h2>
-        <p class="product-price">${product.price}</p>
-        <p class="product-desc">${product.description}</p>
-        <a href="product.html" class="view-btn" title="View Product">👁️ View Product</a>
+  // Render products
+  products.forEach((p) => {
+    const card = document.createElement("div");
+    card.className = "bg-white shadow rounded-xl overflow-hidden transition hover:scale-[1.02]";
+    card.innerHTML = `
+      <img src="${p.image}" alt="${p.title}" class="w-full h-48 object-cover" />
+      <div class="p-4">
+        <div class="text-sm text-gray-500">${p.category}</div>
+        <h3 class="text-lg font-semibold text-gray-800">${p.title}</h3>
+        <p class="text-sm text-gray-600 mb-2">${p.description}</p>
+        <div class="font-bold text-indigo-600">${p.price}</div>
+        <a href="product.html" class="inline-block mt-3 text-sm text-white bg-indigo-600 px-3 py-2 rounded hover:bg-indigo-700">View Product</a>
       </div>
-    </div>
-  `).join('');
-}
-
-document.addEventListener('DOMContentLoaded', renderExploreProducts);
+    `;
+    productGrid.appendChild(card);
+  });
+});

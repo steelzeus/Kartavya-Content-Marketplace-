@@ -4,89 +4,104 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Dashboard – Kartavya</title>
-    <link rel="stylesheet" href="dashboard.css" />
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Poppins', Arial, sans-serif; }</style>
 </head>
-<body>
-    <header></header>
-    <main>
-        <section class="profile-summary">
-            <img src="https://via.placeholder.com/80x80.png?text=User" alt="Profile" class="profile-pic" />
-            <div class="profile-info">
-                <div class="profile-name"><span class="dynamic-name"></span></div>
-                <div class="profile-bio">Student Creator | Age 16 | Templates & Design</div>
-                <a href="edit-profile.html" class="btn btn-secondary edit-profile-btn">Edit Profile</a>
+<body class="flex flex-col bg-gray-50 min-h-screen">
+    <header>
+      <nav class="flex justify-between items-center mx-auto px-4 py-4 container">
+        <div class="font-bold text-indigo-700 text-2xl tracking-tight">
+          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="w-auto h-10" />
+        </div>
+        <ul class="flex items-center gap-6">
+          <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
+          <li><a href="explore.html" class="hover:text-indigo-600 transition">Explore</a></li>
+          <li class="group relative">
+            <button class="flex items-center gap-1 focus:outline-none hover:text-indigo-600 transition">
+              Dashboard
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <ul class="left-0 absolute bg-white opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 shadow-lg mt-2 rounded-lg w-44 transition pointer-events-none group-focus-within:pointer-events-auto group-hover:pointer-events-auto">
+              <li><a href="dashboard.html" class="block hover:bg-indigo-50 px-4 py-2 rounded-t-lg">Creator Dashboard</a></li>
+              <li><a href="parent-dashboard.html" class="block hover:bg-indigo-50 px-4 py-2">Parent Dashboard</a></li>
+              <li><a href="school-dashboard.html" class="block hover:bg-indigo-50 px-4 py-2 rounded-b-lg">School Admin Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="login.html" class="hover:text-indigo-600 transition">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="flex-1 mx-auto px-4 py-8 w-full max-w-5xl">
+        <section class="flex items-center gap-6 bg-white shadow mb-8 p-6 rounded-xl">
+            <img src="https://via.placeholder.com/80x80.png?text=User" alt="Profile" class="shadow-sm rounded-xl w-20 h-20 object-cover" />
+            <div>
+                <div class="font-semibold text-gray-900 text-xl dynamic-name"></div>
+                <div class="mb-2 text-gray-500">Student Creator | Age 16 | Templates & Design</div>
+                <a href="edit-profile.html" class="inline-block bg-pink-500 hover:bg-pink-600 px-4 py-2 rounded text-white transition">Edit Profile</a>
             </div>
         </section>
-        <section class="performance-section">
-            <div class="performance-header">Your Performance</div>
-            <div class="analytics-cards">
-                <div class="analytics-card">
-                    <div class="analytics-icon">💰</div>
-                    <div class="analytics-title">Total Sales</div>
-                    <div class="analytics-value">₹1,280</div>
+        <section class="mb-8">
+            <div class="mb-4 font-semibold text-gray-800 text-lg">Your Performance</div>
+            <div class="gap-4 grid grid-cols-1 sm:grid-cols-3">
+                <div class="flex flex-col items-center bg-white shadow p-5 rounded-xl">
+                    <div class="mb-2 text-3xl">💰</div>
+                    <div class="text-gray-600">Total Sales</div>
+                    <div class="mt-1 font-bold text-indigo-700 text-xl">₹1,280</div>
                 </div>
-                <div class="analytics-card">
-                    <div class="analytics-icon">📦</div>
-                    <div class="analytics-title">Products Listed</div>
-                    <div class="analytics-value">4</div>
+                <div class="flex flex-col items-center bg-white shadow p-5 rounded-xl">
+                    <div class="mb-2 text-3xl">📦</div>
+                    <div class="text-gray-600">Products Listed</div>
+                    <div class="mt-1 font-bold text-indigo-700 text-xl">4</div>
                 </div>
-                <div class="analytics-card">
-                    <div class="analytics-icon">👁️</div>
-                    <div class="analytics-title">Product Views</div>
-                    <div class="analytics-value">1,248</div>
+                <div class="flex flex-col items-center bg-white shadow p-5 rounded-xl">
+                    <div class="mb-2 text-3xl">👁️</div>
+                    <div class="text-gray-600">Product Views</div>
+                    <div class="mt-1 font-bold text-indigo-700 text-xl">1,248</div>
                 </div>
             </div>
         </section>
-        <section class="welcome-section">
-            <h1>Viewing <span class="dynamic-name"></span>'s Dashboard</h1>
+        <section class="mb-8">
+            <h1 class="font-bold text-gray-900 text-2xl">Viewing <span class="dynamic-name"></span>'s Dashboard</h1>
         </section>
-        <section class="upload-section">
-            <h2>Add a New Product as <span class="dynamic-name"></span></h2>
-            <form class="upload-form">
-                <label>Product Title
-                    <input type="text" name="title" required />
+        <section class="mb-12">
+            <h2 class="mb-4 font-semibold text-gray-800 text-xl">Add a New Product as <span class="dynamic-name"></span></h2>
+            <form class="gap-4 grid grid-cols-1 md:grid-cols-3 bg-white shadow p-6 rounded-xl upload-form">
+                <label class="block">
+                    <span class="text-gray-700">Product Title</span>
+                    <input type="text" class="block mt-1 border-gray-300 focus:border-indigo-500 rounded focus:ring-indigo-500 w-full" />
                 </label>
-                <label>Price (₹)
-                    <input type="number" name="price" min="0" required />
+                <label class="block">
+                    <span class="text-gray-700">Category</span>
+                    <input type="text" class="block mt-1 border-gray-300 focus:border-indigo-500 rounded focus:ring-indigo-500 w-full" />
                 </label>
-                <label>Category
-                    <select name="category" required>
-                        <option value="Art">Art</option>
-                        <option value="eBook">eBook</option>
-                        <option value="Templates">Templates</option>
-                        <option value="Design">Design</option>
-                    </select>
+                <label class="block">
+                    <span class="text-gray-700">Price</span>
+                    <input type="number" class="block mt-1 border-gray-300 focus:border-indigo-500 rounded focus:ring-indigo-500 w-full" />
                 </label>
-                <label>Description
-                    <textarea name="description" rows="3" required></textarea>
+                <label class="block md:col-span-3">
+                    <span class="text-gray-700">Description</span>
+                    <textarea class="block mt-1 border-gray-300 focus:border-indigo-500 rounded focus:ring-indigo-500 w-full"></textarea>
                 </label>
-                <label>Image Upload (optional)
-                    <input type="file" name="image" accept="image/*" />
-                </label>
-                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+                <button type="submit" class="md:col-span-3 bg-indigo-600 hover:bg-indigo-700 px-6 py-2 rounded font-semibold text-white transition">Add Product</button>
             </form>
         </section>
-        <section class="your-products">
-            <h2><span class="dynamic-name"></span>'s Products</h2>
-            <div class="product-grid">
-                <!-- Product cards will be rendered by dashboard.js -->
-            </div>
-        </section>
     </main>
-    <footer>
-        <p>© 2025 Kartavya. All rights reserved.</p>
+    <footer class="bg-white mt-auto py-8 border-t text-gray-500 text-sm text-center">
+      <div class="flex md:flex-row flex-col justify-between items-center gap-2 mx-auto px-4 container">
+        <div>© 2025 Kartavya. Built with love for students.</div>
+        <div class="flex gap-4">
+          <a href="#" class="hover:text-indigo-600 transition">Feedback</a>
+          <a href="#" class="hover:text-indigo-600 transition">Privacy Policy</a>
+        </div>
+      </div>
     </footer>
-    <script src="dashboard.js"></script>
     <script src="kartavya-navbar.js"></script>
+    <script src="dashboard.js"></script>
     <script src="feedback.js"></script>
     <script src="chatbot-fake.js"></script>
-    <script>
-    // Personalize profile name
-    const dashName = localStorage.getItem('kartavya_name') || 'Student';
-    document.querySelectorAll('.dynamic-name').forEach(el => el.textContent = dashName);
-    </script>
 </body>
 </html>

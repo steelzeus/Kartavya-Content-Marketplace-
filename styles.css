@@ -1,12 +1,14 @@
+/* Remove or scope global styles that override Tailwind. If you want to keep styles.css, ensure selectors are specific and do not override Tailwind's utility classes. */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
 
 :root {
-  --primary: #2D2A8A;
-  --accent: #e93b81;
-  --highlight: #FFCF59;
-  --mint: #72E4C4;
-  --background: #f9f9fc;
-  --text-dark: #1a1a1a;
+  --primary: #5E60CE;
+  --accent: #FF6D60;
+  --highlight: #B5EAEA;
+  --mint: #B5EAEA;
+  --background: #F8F7FF;
+  --text-dark: #1A1A1A;
 }
 
 html, body {
@@ -120,7 +122,7 @@ p {
 }
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   filter: brightness(1.08);
-  box-shadow: 0 0 16px rgba(233, 59, 129, 0.18);
+  box-shadow: 0 0 16px rgba(255, 109, 96, 0.18);
   transform: scale(1.04);
 }
 
@@ -133,7 +135,7 @@ p {
   background: var(--primary);
   color: #fff;
   filter: brightness(1.08);
-  box-shadow: 0 0 16px rgba(45,42,138,0.13);
+  box-shadow: 0 0 16px rgba(94,96,206,0.13);
   transform: scale(1.04);
 }
 
@@ -396,7 +398,7 @@ footer {
   cursor: pointer;
   background: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(44,108,223,0.07);
+  box-shadow: 0 4px 16px rgba(94,96,206,0.07);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -407,7 +409,7 @@ footer {
 }
 .product-card:hover, .product-card:focus-within, .product-card:active {
   transform: translateY(-6px) scale(1.025);
-  box-shadow: 0 8px 32px rgba(44,108,223,0.13);
+  box-shadow: 0 8px 32px rgba(94,96,206,0.13);
   z-index: 2;
 }
 
@@ -456,7 +458,7 @@ footer {
   top: 14px;
   left: 14px;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(44,108,223,0.10);
+  box-shadow: 0 2px 8px rgba(94,96,206,0.10);
   background: var(--highlight);
   color: var(--primary);
 }
@@ -474,7 +476,15 @@ footer {
 }
 .category-badge[data-category="eBook"] {
   background: #ffe6b3;
-  color: #b97a00;
+  color: #FF6D60;
+}
+.category-badge[data-category="Journal"] {
+  background: #fffbe6;
+  color: #5E60CE;
+}
+.category-badge[data-category="Tool"] {
+  background: #F8F7FF;
+  color: #FF6D60;
 }
 
 .product-grid {
