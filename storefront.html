@@ -13,11 +13,12 @@
       body { font-family: 'Poppins', sans-serif; }
     </style>
 </head>
-<body class="bg-gray-50 min-h-screen">
-    <header>
+<body class="flex flex-col bg-gray-50 min-h-screen text-gray-900">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow-sm">
       <!-- Navbar will be injected by kartavya-navbar.js -->
+      <!-- Place your logo at /assets/kartavya-logo.png in the injected navbar -->
     </header>
-    <main class="mx-auto px-4 py-8 max-w-5xl">
+    <main class="flex-1 animate-fadein mx-auto px-4 py-10 w-full max-w-5xl">
         <!-- Creator Profile -->
         <section class="flex md:flex-row flex-col items-center gap-8 bg-gradient-to-r from-indigo-800 to-pink-500 shadow mb-10 p-8 rounded-xl text-white">
             <div class="bg-white mb-3 rounded-lg overflow-hidden">
@@ -87,6 +88,19 @@
             </div>
         </section>
     </main>
+    <footer class="bg-white mt-auto py-8 border-t text-gray-500 text-sm text-center">
+        <div class="flex md:flex-row flex-col justify-between items-center gap-2 mx-auto px-4 max-w-7xl w-full">
+            <div>© 2025 Kartavya. Built with love for students.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-indigo-600 transition">Feedback</a>
+                <a href="#" class="hover:text-indigo-600 transition">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+    <style>
+      @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fadein { animation: fadein 0.8s ease; }
+    </style>
     <script src="kartavya-navbar.js"></script>
     <script src="feedback.js"></script>
     <script src="chatbot-fake.js"></script>

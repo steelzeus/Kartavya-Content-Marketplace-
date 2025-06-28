@@ -11,10 +11,12 @@
     <style>body { font-family: 'Poppins', Arial, sans-serif; }</style>
 </head>
 <body class="flex flex-col bg-gray-50 min-h-screen text-gray-900">
-    <header>
-      <nav class="flex justify-between items-center mx-auto px-4 py-4 container">
-        <div class="font-bold text-indigo-700 text-2xl tracking-tight">
-          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="w-auto h-10" />
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow-sm">
+      <nav class="flex justify-between items-center mx-auto px-4 py-4 max-w-7xl w-full">
+        <div class="flex items-center gap-3">
+          <!-- Place your logo at /assets/kartavya-logo.png -->
+          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="h-10 w-auto" />
+          <span class="font-bold text-indigo-700 text-2xl tracking-tight">Kartavya</span>
         </div>
         <ul class="flex items-center gap-6">
           <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
@@ -34,7 +36,7 @@
         </ul>
       </nav>
     </header>
-    <main class="flex flex-col flex-1">
+    <main class="flex flex-col flex-1 animate-fadein">
       <section class="bg-gradient-to-r from-indigo-600 to-pink-500 px-4 py-20">
         <div class="mx-auto w-full max-w-2xl text-white text-center">
           <h1 class="mb-4 font-bold text-4xl md:text-5xl tracking-tight">The Marketplace for Student Creators</h1>
@@ -45,13 +47,103 @@
           </div>
         </div>
       </section>
-      <section class="mx-auto px-4 py-10 container">
-        <h2 class="mb-8 font-bold text-3xl">Explore Student-Made Products</h2>
-        <div id="productGrid" class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"></div>
+      
+      <!-- Search and Filter Section -->
+      <section class="mx-auto px-4 py-8 max-w-7xl w-full">
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8">
+          <!-- Search Bar -->
+          <div class="mb-6">
+            <div class="relative">
+              <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="Search products..." 
+                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+              >
+              <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+              </svg>
+            </div>
+          </div>
+          
+          <!-- Category Filters -->
+          <div class="flex flex-wrap gap-2">
+            <button class="category-filter active px-4 py-2 rounded-full bg-indigo-600 text-white text-sm font-medium transition" data-category="all">
+              All Products
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="Template">
+              Templates
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="eBook">
+              eBooks
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="UI Kit">
+              UI Kits
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="Wallpaper">
+              Wallpapers
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="Journal">
+              Journals
+            </button>
+            <button class="category-filter px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium hover:bg-gray-200 transition" data-category="Planner">
+              Planners
+            </button>
+          </div>
+        </div>
+        
+        <!-- Results Counter -->
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="font-bold text-3xl">Explore Student-Made Products</h2>
+          <div class="text-gray-600">
+            <span id="resultsCount">100</span> products found
+          </div>
+        </div>
+        
+        <!-- Product Grid with Loading State -->
+        <div id="productGrid" class="gap-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          <!-- Loading skeleton cards -->
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-48 rounded-xl mb-4"></div>
+            <div class="space-y-2">
+              <div class="bg-gray-200 h-4 rounded w-1/4"></div>
+              <div class="bg-gray-200 h-6 rounded w-3/4"></div>
+              <div class="bg-gray-200 h-4 rounded w-full"></div>
+              <div class="bg-gray-200 h-4 rounded w-1/3"></div>
+            </div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-48 rounded-xl mb-4"></div>
+            <div class="space-y-2">
+              <div class="bg-gray-200 h-4 rounded w-1/4"></div>
+              <div class="bg-gray-200 h-6 rounded w-3/4"></div>
+              <div class="bg-gray-200 h-4 rounded w-full"></div>
+              <div class="bg-gray-200 h-4 rounded w-1/3"></div>
+            </div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-48 rounded-xl mb-4"></div>
+            <div class="space-y-2">
+              <div class="bg-gray-200 h-4 rounded w-1/4"></div>
+              <div class="bg-gray-200 h-6 rounded w-3/4"></div>
+              <div class="bg-gray-200 h-4 rounded w-full"></div>
+              <div class="bg-gray-200 h-4 rounded w-1/3"></div>
+            </div>
+          </div>
+          <div class="animate-pulse">
+            <div class="bg-gray-200 h-48 rounded-xl mb-4"></div>
+            <div class="space-y-2">
+              <div class="bg-gray-200 h-4 rounded w-1/4"></div>
+              <div class="bg-gray-200 h-6 rounded w-3/4"></div>
+              <div class="bg-gray-200 h-4 rounded w-full"></div>
+              <div class="bg-gray-200 h-4 rounded w-1/3"></div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <footer class="bg-white py-8 border-t text-gray-500 text-sm text-center">
-      <div class="flex md:flex-row flex-col justify-between items-center gap-2 mx-auto px-4 container">
+    <footer class="bg-white py-8 border-t text-gray-500 text-sm text-center mt-auto">
+      <div class="flex md:flex-row flex-col justify-between items-center gap-2 mx-auto px-4 max-w-7xl w-full">
         <div>© 2025 Kartavya. Built with love for students.</div>
         <div class="flex gap-4">
           <a href="#" class="hover:text-indigo-600 transition">Feedback</a>
@@ -59,8 +151,16 @@
         </div>
       </div>
     </footer>
+    
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 opacity-0 invisible">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+      </svg>
+    </button>
+    
     <!-- Floating Feedback Button -->
-    <button id="feedbackBtn" class="right-6 bottom-6 z-50 fixed flex items-center gap-2 bg-pink-500 hover:bg-pink-600 shadow-lg px-6 py-3 rounded-full font-bold text-white text-lg transition">
+    <button id="feedbackBtn" class="right-6 bottom-20 z-50 fixed flex items-center gap-2 bg-pink-500 hover:bg-pink-600 shadow-lg px-6 py-3 rounded-full font-bold text-white text-lg transition">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M7 8h10M7 12h4m1 8a9 9 0 100-18 9 9 0 000 18z"/></svg>
       Feedback
     </button>
@@ -111,5 +211,9 @@
       };
     </script>
     <script src="explore.js" defer></script>
+    <style>
+      @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fadein { animation: fadein 0.8s ease; }
+    </style>
 </body>
 </html>

@@ -4,59 +4,297 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>School Admin Dashboard – Kartavya</title>
-    <link rel="stylesheet" href="school-dashboard.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>body { font-family: 'Poppins', Arial, sans-serif; }</style>
 </head>
-<body>
-    <header></header>
-    <main>
-        <section class="school-admin-top">
-            <h1>Viewing <span class="dynamic-name"></span>'s Dashboard (School Admin)</h1>
-            <p class="subtitle">Welcome, Principal Munish Dubey (Bridegford School) – <span class="dynamic-name"></span>'s School</p>
-        </section>
-        <section class="school-summary-cards">
-            <div class="summary-card">
-                <div class="summary-title">Total Student Creators</div>
-                <div class="summary-value">48</div>
+<body class="flex flex-col bg-gray-50 min-h-screen text-gray-900">
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow-sm">
+      <nav class="flex justify-between items-center mx-auto px-4 py-4 max-w-7xl w-full">
+        <div class="flex items-center gap-3">
+          <!-- Place your logo at /assets/kartavya-logo.png -->
+          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="h-10 w-auto" />
+          <span class="font-bold text-indigo-700 text-2xl tracking-tight">Kartavya</span>
+        </div>
+        <ul class="flex items-center gap-6">
+          <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
+          <li><a href="explore.html" class="hover:text-indigo-600 transition">Explore</a></li>
+          <li class="group relative">
+            <button class="flex items-center gap-1 focus:outline-none hover:text-indigo-600 transition">
+              Dashboard
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+            </button>
+            <ul class="left-0 absolute bg-white opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 shadow-lg mt-2 rounded-lg w-44 transition pointer-events-none group-focus-within:pointer-events-auto group-hover:pointer-events-auto">
+              <li><a href="dashboard.html" class="block hover:bg-indigo-50 px-4 py-2 rounded-t-lg">Creator Dashboard</a></li>
+              <li><a href="parent-dashboard.html" class="block hover:bg-indigo-50 px-4 py-2">Parent Dashboard</a></li>
+              <li><a href="school-dashboard.html" class="block hover:bg-indigo-50 px-4 py-2 rounded-b-lg">School Admin Dashboard</a></li>
+            </ul>
+          </li>
+          <li><a href="login.html" class="hover:text-indigo-600 transition">Login</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <main class="flex-1 animate-fadein mx-auto px-4 py-10 w-full max-w-7xl">
+        <!-- School Header -->
+        <div class="bg-white rounded-xl shadow-sm p-6 mb-8 border border-gray-100">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-xl flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">S</span>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold text-gray-900">St. Xavier's High School</h1>
+                        <p class="text-gray-600">Admin Dashboard • Managing student creativity</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                        Export Report
+                    </button>
+                    <button class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition">
+                        Add Event
+                    </button>
+                </div>
             </div>
-            <div class="summary-card">
-                <div class="summary-title">Total Sales</div>
-                <div class="summary-value">₹18,200</div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Student Creators</p>
+                        <p class="text-2xl font-bold text-gray-900">47</p>
+                        <p class="text-sm text-green-600">+5 this month</p>
+                    </div>
+                    <div class="p-3 bg-blue-100 rounded-lg">
+                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path></svg>
+                    </div>
+                </div>
             </div>
-            <div class="summary-card">
-                <div class="summary-title">Ongoing Competitions</div>
-                <div class="summary-value">2</div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Total Revenue</p>
+                        <p class="text-2xl font-bold text-gray-900">₹12,847</p>
+                        <p class="text-sm text-green-600">+18% from last month</p>
+                    </div>
+                    <div class="p-3 bg-green-100 rounded-lg">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"></path></svg>
+                    </div>
+                </div>
             </div>
-        </section>
-        <section class="top-creators">
-            <h2>Top Creators</h2>
-            <table class="creators-table">
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Grade</th>
-                        <th>Sales</th>
-                        <th>Products Listed</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><span class="dynamic-name"></span></td>
-                        <td>10</td>
-                        <td>₹2,100</td>
-                        <td>5</td>
-                        <td>Active</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Products Listed</p>
+                        <p class="text-2xl font-bold text-gray-900">156</p>
+                        <p class="text-sm text-blue-600">+12 this week</p>
+                    </div>
+                    <div class="p-3 bg-purple-100 rounded-lg">
+                        <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                <div class="flex items-center justify-between">
+                    <div>
+                        <p class="text-sm font-medium text-gray-600">Events Organized</p>
+                        <p class="text-2xl font-bold text-gray-900">8</p>
+                        <p class="text-sm text-orange-600">2 upcoming</p>
+                    </div>
+                    <div class="p-3 bg-orange-100 rounded-lg">
+                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts and Tables Section -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+            <!-- Monthly Sales Chart -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-900">Monthly Sales Trend</h2>
+                </div>
+                <div class="p-6">
+                    <div class="flex items-end justify-between h-48 space-x-2">
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-200 rounded-t" style="height: 60%"></div>
+                            <span class="text-xs text-gray-500 mt-2">Jan</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-300 rounded-t" style="height: 80%"></div>
+                            <span class="text-xs text-gray-500 mt-2">Feb</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-400 rounded-t" style="height: 45%"></div>
+                            <span class="text-xs text-gray-500 mt-2">Mar</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-500 rounded-t" style="height: 90%"></div>
+                            <span class="text-xs text-gray-500 mt-2">Apr</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-600 rounded-t" style="height: 75%"></div>
+                            <span class="text-xs text-gray-500 mt-2">May</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <div class="w-8 bg-indigo-700 rounded-t" style="height: 95%"></div>
+                            <span class="text-xs text-gray-500 mt-2">Jun</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <p class="text-sm text-gray-600">Revenue in thousands (₹)</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Top Performing Students -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100">
+                <div class="p-6 border-b border-gray-100">
+                    <h2 class="text-xl font-semibold text-gray-900">Top Performing Students</h2>
+                </div>
+                <div class="p-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-yellow-50 to-orange-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center">
+                                    <span class="text-yellow-600 font-bold text-sm">1</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Priya Sharma</p>
+                                    <p class="text-sm text-gray-600">Class 12</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-gray-900">₹2,847</p>
+                                <p class="text-xs text-gray-500">8 products</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-gray-50 to-blue-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <span class="text-gray-600 font-bold text-sm">2</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Arjun Patel</p>
+                                    <p class="text-sm text-gray-600">Class 11</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-gray-900">₹1,923</p>
+                                <p class="text-xs text-gray-500">6 products</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-gradient-to-r from-orange-50 to-red-50 rounded-lg">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-8 h-8 bg-orange-100 rounded-full flex items-center justify-center">
+                                    <span class="text-orange-600 font-bold text-sm">3</span>
+                                </div>
+                                <div>
+                                    <p class="font-medium text-gray-900">Zara Khan</p>
+                                    <p class="text-sm text-gray-600">Class 10</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <p class="font-bold text-gray-900">₹1,456</p>
+                                <p class="text-xs text-gray-500">5 products</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Upcoming Events -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-100 mb-8">
+            <div class="p-6 border-b border-gray-100">
+                <h2 class="text-xl font-semibold text-gray-900">Upcoming Events & Competitions</h2>
+            </div>
+            <div class="p-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-blue-100 text-blue-700 px-2 py-1 rounded text-xs font-medium">Competition</span>
+                            <span class="text-sm text-gray-500">July 15</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Kartavya Mela 2024</h3>
+                        <p class="text-sm text-gray-600 mb-3">Annual student creator showcase with prizes worth ₹50,000</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">47 participants</span>
+                            <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-medium">Workshop</span>
+                            <span class="text-sm text-gray-500">June 20</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Digital Art Masterclass</h3>
+                        <p class="text-sm text-gray-600 mb-3">Learn advanced digital art techniques from professionals</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">32 registered</span>
+                            <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">View Details</button>
+                        </div>
+                    </div>
+
+                    <div class="border border-gray-200 rounded-lg p-4 hover:shadow-md transition">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-medium">Fair</span>
+                            <span class="text-sm text-gray-500">May 12</span>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Mini Startup Fair</h3>
+                        <p class="text-sm text-gray-600 mb-3">Young entrepreneurs showcase their business ideas</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-500">18 teams</span>
+                            <button class="text-blue-600 hover:text-blue-800 text-sm font-medium">View Details</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl p-6 text-white">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">School Administration</h3>
+                    <p class="text-indigo-100">Manage student accounts, approve products, and organize events</p>
+                </div>
+                <div class="flex space-x-4">
+                    <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition">
+                        Approve Products
+                    </button>
+                    <button class="bg-white text-indigo-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-50 transition">
+                        Add Students
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>© 2025 Kartavya. All rights reserved.</p>
+    
+    <footer class="bg-white mt-auto py-8 border-t text-gray-500 text-sm text-center">
+        <div class="flex md:flex-row flex-col justify-between items-center gap-2 mx-auto px-4 max-w-7xl w-full">
+            <div>© 2025 Kartavya. Built with love for students.</div>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-indigo-600 transition">Feedback</a>
+                <a href="#" class="hover:text-indigo-600 transition">Privacy Policy</a>
+            </div>
+        </div>
     </footer>
+    
+    <style>
+      @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fadein { animation: fadein 0.8s ease; }
+    </style>
     <script src="kartavya-navbar.js"></script>
     <script src="feedback.js"></script>
     <script src="chatbot-fake.js"></script>

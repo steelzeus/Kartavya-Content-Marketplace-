@@ -11,10 +11,12 @@
     <style>body { font-family: 'Poppins', Arial, sans-serif; }</style>
 </head>
 <body class="flex flex-col bg-gray-50 min-h-screen text-gray-900">
-    <header>
-      <nav class="flex justify-between items-center mx-auto px-4 py-4 container">
-        <div class="font-bold text-indigo-700 text-2xl tracking-tight">
-          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="w-auto h-10" />
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur shadow-sm">
+      <nav class="flex justify-between items-center mx-auto px-4 py-4 max-w-7xl w-full">
+        <div class="flex items-center gap-3">
+          <!-- Place your logo at /assets/kartavya-logo.png -->
+          <img src="/assets/kartavya-logo.png" alt="Kartavya Logo" class="h-10 w-auto" />
+          <span class="font-bold text-indigo-700 text-2xl tracking-tight">Kartavya</span>
         </div>
         <ul class="flex items-center gap-6">
           <li><a href="index.html" class="hover:text-indigo-600 transition">Home</a></li>
@@ -34,8 +36,8 @@
         </ul>
       </nav>
     </header>
-    <main class="flex-1">
-      <div class="mx-auto px-4 max-w-7xl container">
+    <main class="flex-1 animate-fadein">
+      <div class="mx-auto px-4 max-w-7xl w-full">
         <section class="bg-gradient-to-r from-indigo-600 to-pink-500 my-12 py-16 rounded-2xl text-white text-center">
             <h1 class="mb-4 font-bold text-4xl md:text-5xl tracking-tight">The Marketplace for Students</h1>
             <p class="mb-8 text-indigo-100 text-lg">Sell your creativity. Support young creators. Discover student-made digital products.</p>
@@ -74,8 +76,12 @@
         </section>
       </div>
     </main>
-    <footer class="bg-white py-8 border-t text-gray-500 text-sm text-center">
+    <footer class="bg-white py-8 border-t text-gray-500 text-sm text-center mt-auto">
         © 2025 Kartavya. All rights reserved.
     </footer>
+    <style>
+      @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
+      .animate-fadein { animation: fadein 0.8s ease; }
+    </style>
 </body>
 </html>
