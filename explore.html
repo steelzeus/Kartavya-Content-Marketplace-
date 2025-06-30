@@ -1,101 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Explore – Kartavya</title>
-    <link rel="stylesheet" href="explore.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Products – Kartavya</title>
+    <meta name="description" content="Discover amazing digital products created by talented student creators. Find unique designs, templates, and digital art.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./src/styles/main.css">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
-<body>
-    <header>
-        <nav class="navbar">
-            <div class="logo">Kartavya</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="explore.html">Explore</a></li>
-                <li><a href="dashboard.html">Dashboard</a></li>
-                <li><a href="login.html">Login</a></li>
-                <li><a href="dashboard.html">Start Selling</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section class="hero" style="background: linear-gradient(90deg, #2D2A8A 0%, #e93b81 100%); color: #fff;">
-            <h1>Explore Arya Sharma’s Digital Products</h1>
-        </section>
-        <section class="explore-controls">
-            <input type="text" class="search-input" placeholder="Search by title or tag..." />
-            <div class="category-filters">
-                <button class="filter-btn active" data-category="all">All</button>
-                <button class="filter-btn" data-category="art">Art</button>
-                <button class="filter-btn" data-category="ebook">eBook</button>
-                <button class="filter-btn" data-category="templates">Templates</button>
-                <button class="filter-btn" data-category="design">Design</button>
-            </div>
-        </section>
-        <section class="product-grid" id="productGrid">
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Pastel Art Kit" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Pastel Art Kit</h2>
-                    <p class="product-price">₹249</p>
-                    <p class="product-desc">A curated set of pastel digital brushes and textures for Procreate and Photoshop.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
+<body class="bg-gray-50 text-gray-900 antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-soft" 
+         x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center space-x-2 group">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-500 rounded-lg flex items-center justify-center transform group-hover:scale-110 transition-transform duration-200">
+                            <span class="text-white font-bold text-sm">K</span>
+                        </div>
+                        <span class="font-display font-bold text-xl text-primary-600 group-hover:text-accent-500 transition-colors duration-200">Kartavya</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="nav-link">Home</a>
+                        <a href="/explore.html" class="nav-link active" aria-current="page">Explore</a>
+                        <a href="/dashboard.html" class="nav-link">Dashboard</a>
+                        <a href="/login.html" class="nav-link">Login</a>
+                        <a href="/dashboard.html" class="btn-primary-sm">Start Selling</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button @click="mobileMenuOpen = !mobileMenuOpen" 
+                            class="p-2 rounded-md text-gray-600 hover:text-primary-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors duration-200"
+                            :aria-expanded="mobileMenuOpen"
+                            aria-label="Toggle navigation menu">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Study Wallpaper Pack" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Study Wallpaper Pack</h2>
-                    <p class="product-price">₹99</p>
-                    <p class="product-desc">10 motivational wallpapers for students, designed to boost focus and creativity.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div x-show="mobileMenuOpen" 
+             x-transition:enter="transition ease-out duration-200"
+             x-transition:enter-start="opacity-0 transform scale-95"
+             x-transition:enter-end="opacity-100 transform scale-100"
+             x-transition:leave="transition ease-in duration-150"
+             x-transition:leave-start="opacity-100 transform scale-100"
+             x-transition:leave-end="opacity-0 transform scale-95"
+             class="md:hidden bg-white border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="mobile-nav-link">Home</a>
+                <a href="/explore.html" class="mobile-nav-link active">Explore</a>
+                <a href="/dashboard.html" class="mobile-nav-link">Dashboard</a>
+                <a href="/login.html" class="mobile-nav-link">Login</a>
+                <a href="/dashboard.html" class="btn-primary block text-center mt-4">Start Selling</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-primary-600 via-primary-700 to-accent-600 text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl font-display font-bold mb-4">
+                Explore Student-Made Products
+            </h1>
+            <p class="text-xl text-white/90 max-w-2xl mx-auto">
+                Discover amazing digital creations from talented student creators around the world.
+            </p>
+        </div>
+    </section>
+
+    <!-- Search and Filters -->
+    <section class="bg-white border-b border-gray-200 sticky top-16 z-40" 
+             x-data="exploreApp()" 
+             x-init="init()">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex flex-col lg:flex-row gap-6 items-center">
+                <!-- Search -->
+                <div class="relative flex-1 max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                        <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                        </svg>
+                    </div>
+                    <input type="text" 
+                           x-model="searchQuery"
+                           @input="filterProducts()"
+                           class="search-input pl-10"
+                           placeholder="Search products, creators, or tags..."
+                           aria-label="Search products">
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap gap-2">
+                    <template x-for="category in categories" :key="category.id">
+                        <button @click="toggleCategory(category.id)"
+                                :class="selectedCategories.includes(category.id) ? 'filter-chip filter-chip-active' : 'filter-chip filter-chip-inactive'"
+                                :aria-pressed="selectedCategories.includes(category.id)"
+                                x-text="category.name">
+                        </button>
+                    </template>
+                </div>
+
+                <!-- Sort Options -->
+                <div class="flex items-center space-x-2">
+                    <label for="sort-select" class="text-sm font-medium text-gray-700">Sort by:</label>
+                    <select id="sort-select" 
+                            x-model="sortBy"
+                            @change="filterProducts()"
+                            class="form-input py-2 text-sm">
+                        <option value="newest">Newest</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="rating">Highest Rated</option>
+                    </select>
                 </div>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Notes Template" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Notes Template</h2>
-                    <p class="product-price">₹59</p>
-                    <p class="product-desc">A Notion and printable template for organized, effective study notes.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
+
+            <!-- Results Summary -->
+            <div class="mt-4 flex items-center justify-between">
+                <p class="text-sm text-gray-600">
+                    Showing <span x-text="filteredProducts.length"></span> of <span x-text="allProducts.length"></span> products
+                </p>
+                <button @click="clearFilters()" 
+                        x-show="searchQuery || selectedCategories.length > 0"
+                        class="text-sm text-primary-600 hover:text-primary-700 font-medium">
+                    Clear all filters
+                </button>
             </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Minimalist Poster Set" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Minimalist Poster Set</h2>
-                    <p class="product-price">₹149</p>
-                    <p class="product-desc">A set of 5 printable posters for dorm rooms and study spaces.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <main id="main-content" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Loading State -->
+        <div x-show="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <template x-for="i in 8" :key="i">
+                <div class="bg-white rounded-xl shadow-soft overflow-hidden">
+                    <div class="skeleton h-48 w-full"></div>
+                    <div class="p-6 space-y-3">
+                        <div class="skeleton-text w-3/4"></div>
+                        <div class="skeleton-text w-1/2"></div>
+                        <div class="skeleton-text w-full"></div>
+                        <div class="skeleton-text w-2/3"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Digital Sketchbook" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Digital Sketchbook</h2>
-                    <p class="product-price">₹199</p>
-                    <p class="product-desc">A digital sketchbook with 50+ pages for artists and doodlers.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-            <div class="product-card">
-                <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80" alt="Social Media Kit" class="product-cover" />
-                <div class="product-info">
-                    <h2 class="product-title">Social Media Kit</h2>
-                    <p class="product-price">₹129</p>
-                    <p class="product-desc">Editable templates for Instagram, Facebook, and Twitter posts.</p>
-                    <a href="product.html" class="view-btn">View Product</a>
-                </div>
-            </div>
-        </section>
+            </template>
+        </div>
+
+        <!-- Products Grid -->
+        <div x-show="!loading" 
+             x-transition:enter="transition ease-out duration-300"
+             x-transition:enter-start="opacity-0"
+             x-transition:enter-end="opacity-100"
+             class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+            <template x-for="product in filteredProducts" :key="product.id">
+                <article class="product-card group" 
+                         @click="viewProduct(product)"
+                         :aria-label="`View ${product.title} by ${product.creator}`"
+                         tabindex="0"
+                         @keydown.enter="viewProduct(product)"
+                         @keydown.space.prevent="viewProduct(product)">
+                    
+                    <!-- Product Image -->
+                    <div class="relative overflow-hidden">
+                        <img :src="product.image" 
+                             :alt="product.title"
+                             class="product-image"
+                             loading="lazy">
+                        
+                        <!-- Category Badge -->
+                        <span class="category-badge"
+                              :class="getCategoryColor(product.category)"
+                              x-text="product.category">
+                        </span>
+                        
+                        <!-- Quick Actions -->
+                        <div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                            <button @click.stop="toggleWishlist(product.id)"
+                                    :class="product.wishlisted ? 'text-red-500' : 'text-white'"
+                                    class="p-2 rounded-full bg-black/20 backdrop-blur-sm hover:bg-black/40 transition-colors duration-200"
+                                    :aria-label="product.wishlisted ? 'Remove from wishlist' : 'Add to wishlist'">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="p-6">
+                        <div class="flex items-start justify-between mb-2">
+                            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors duration-200 line-clamp-2" 
+                                x-text="product.title">
+                            </h3>
+                            <div class="flex items-center ml-2">
+                                <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                                </svg>
+                                <span class="text-sm text-gray-600 ml-1" x-text="product.rating"></span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-3" x-text="`by ${product.creator}`"></p>
+                        
+                        <p class="text-gray-700 text-sm mb-4 line-clamp-2" x-text="product.description"></p>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl font-bold text-primary-600" x-text="`₹${product.price}`"></span>
+                            <button class="btn-primary-sm" @click.stop="addToCart(product)">
+                                Add to Cart
+                            </button>
+                        </div>
+                        
+                        <!-- Tags -->
+                        <div class="mt-3 flex flex-wrap gap-1" x-show="product.tags && product.tags.length > 0">
+                            <template x-for="tag in product.tags.slice(0, 3)" :key="tag">
+                                <span class="inline-block px-2 py-1 text-xs bg-gray-100 text-gray-600 rounded-full" 
+                                      x-text="tag">
+                                </span>
+                            </template>
+                        </div>
+                    </div>
+                </article>
+            </template>
+        </div>
+
+        <!-- No Results -->
+        <div x-show="!loading && filteredProducts.length === 0" 
+             class="text-center py-16">
+            <svg class="mx-auto h-24 w-24 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 20.4a7.962 7.962 0 01-5-1.691c-2.598-2.167-3.74-5.827-3.74-9.209 0-3.382 1.142-7.042 3.74-9.209A7.962 7.962 0 0112 3.6a7.962 7.962 0 015 1.691c2.598 2.167 3.74 5.827 3.74 9.209 0 3.382-1.142 7.042-3.74 9.209z"></path>
+            </svg>
+            <h3 class="mt-4 text-lg font-medium text-gray-900">No products found</h3>
+            <p class="mt-2 text-gray-600">Try adjusting your search or filter criteria.</p>
+            <button @click="clearFilters()" class="mt-4 btn-primary">
+                Clear Filters
+            </button>
+        </div>
+
+        <!-- Load More -->
+        <div x-show="!loading && filteredProducts.length > 0 && hasMore" 
+             class="text-center mt-12">
+            <button @click="loadMore()" 
+                    :disabled="loadingMore"
+                    class="btn-primary-lg">
+                <span x-show="!loadingMore">Load More Products</span>
+                <span x-show="loadingMore" class="flex items-center">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Loading...
+                </span>
+            </button>
+        </div>
     </main>
-    <footer>
-        <p>© 2025 Kartavya. All rights reserved.</p>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-primary-600 to-accent-500 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">K</span>
+                        </div>
+                        <span class="font-display font-bold text-xl">Kartavya</span>
+                    </div>
+                    <p class="text-gray-400 mb-4 max-w-md">
+                        Empowering the next generation of creators through our innovative student marketplace platform.
+                    </p>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Platform</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/explore.html" class="text-gray-300 hover:text-white transition-colors duration-200">Explore Products</a></li>
+                        <li><a href="/dashboard.html" class="text-gray-300 hover:text-white transition-colors duration-200">Creator Dashboard</a></li>
+                        <li><a href="/parent-dashboard.html" class="text-gray-300 hover:text-white transition-colors duration-200">Parent Portal</a></li>
+                        <li><a href="/school-dashboard.html" class="text-gray-300 hover:text-white transition-colors duration-200">School Admin</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-400 tracking-wider uppercase mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Help Center</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-300 hover:text-white transition-colors duration-200">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-400">© 2025 Kartavya. All rights reserved. Built with ❤️ for student creators.</p>
+            </div>
+        </div>
     </footer>
-    <script src="explore.js" defer></script>
+
+    <script src="./src/js/main.js"></script>
+    <script src="./src/js/explore.js"></script>
 </body>
 </html>
